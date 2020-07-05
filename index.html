@@ -11,5 +11,26 @@
   <body>
     <h1>HTML Starter</h1>
     <script src="dist/js/main.js"></script>
+    <!-- Added a Canvas to the body *1-->
+    <canvas id="canvas" height="600px" width="800px"></canvas>          
   </body>
+
+  <script>
+    // Defined a canvas. This tells JavaScript which element to use as the canvas.*2 
+    var canvas = document.getElementById('canvas');
+
+    // Added a 2D context. *When the canvas was created it was stored in an object named canvas.  *3
+    // To add a fill color to the object, access the getContext() method of the canvas object. *3
+    var ctx = canvas.getContext('2d');
+
+    // Added an at Random fill color to the rectangle by accessing the fillstyle property of the ctx object *4
+    // *When the context was created it was stored in the object we named ctx *4
+    ctx.fillStyle = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+    // Draw a rectangle   *5
+    // Access the fillReact() of our ctx object  *5
+    // For a rectangle the x,y coordinates represent the top left corner of the rectangle
+    ctx.fillRect(10, 10, 100, 100);
+  </script>
+  </html>
 </html>

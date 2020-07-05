@@ -1,5 +1,7 @@
-# html-starter
-A starter package for basic HTML projects
+# Draw
+Draw on Canvas in JavaScript
+
+Start with package for basic HTML projects
 
 ```sh
 cd /var/www

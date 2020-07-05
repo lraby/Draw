@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <title>Hello World</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+      <canvas id="canvas" height="600px" width="800px"></canvas>
+
+      <script>
+        // Used Math.random() to draw a square in a random location in the canvas. 
+        //Plot a random x
+        var x = Math.random() * 700;
+
+        //Plot a random y
+        var y = Math.random() * 500;
+
+        //Initialize the canvas
+        var canvas = document.getElementById('canvas');
+
+        //create a context
+        var ctx = canvas.getContext('2d');
+
+        //Create a random color
+        ctx.fillStyle = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+        //Create the rectangle
+        // Set the rectangle to be 100 pixels smaller than the canvas height and width so that the box will appear in range.
+        // For a rectangle the x,y coordinates represent the top left corner of the rectangle 
+        ctx.fillRect(x, y, 100, 100);
+
+        //Create a circle
+        // Drawing a circle 
+        // method referenced here: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc
+        // ex.void ctx.arc(x, y, radius, startAngle, endAngle [, anticlockwise]);
+        // for a circle x,y represents the center of a circle.
+        // Where the third and fourth arguments of fillRect represent the height and width 
+        // the third and fourth arguments represent the start and ending point of the arc to be drawn, 
+        // for a complete circle you will always start at 0 and end at tau or pi^2 (2*pi).
+        ctx.beginPath();
+        ctx.arc(230, 400, 83, 0, 2 * Math.PI);
+        ctx.stroke();
+
+      </script>
+    </body>
+</html>
